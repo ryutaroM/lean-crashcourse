@@ -1,7 +1,3 @@
-inductive MyNat where
-    | zero
-    | succ (n : MyNat)
-
-#check MyNat.zero
-#check MyNat.succ
-#check MyNat.succ MyNat.zero
+-- This module serves as the root of the `CrashCourse` library.
+-- Import modules here that should be built as part of the library.
+import CrashCourse.Basic
