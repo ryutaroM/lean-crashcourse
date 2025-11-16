@@ -1,9 +1,9 @@
 import Lake
 open Lake DSL
 
-package "CrashCource" where
+package "CrashCourse" where
   version := v!"0.1.0"
 
 @[default_target]
-lean_lib «CrashCource» where
-  -- add library configuration options here
+lean_lib «CrashCourse» where
+ globs := #[.submodules `CrashCourse]

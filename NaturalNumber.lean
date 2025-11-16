@@ -5,3 +5,21 @@ inductive MyNat where
 #check MyNat.zero
 #check MyNat.succ
 #check MyNat.succ MyNat.zero
+
+def MyNat.one := MyNat.succ MyNat.zero
+def MyNat.two := MyNat.succ MyNat.one
+
+def MyNat.add(m n : MyNat) : MyNat :=
+    match n with
+    | .zero => m
+    | .succ n => MyNat.succ (MyNat.add m n)
+
+#check MyNat.add MyNat.one MyNat.one = MyNat.two
+
+set_option pp.fieldNotation.generalized false
+
+#reduce MyNat.add MyNat.one MyNat.one
+#reduce MyNat.two
+
+example : MyNat.add MyNat.one MyNat.one = MyNat.two := by
+    rfl
