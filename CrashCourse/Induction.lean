@@ -1,9 +1,9 @@
 import CrashCourse.TypeClass
 
 
-example (n : MyNat) : 0 + n = n := by
-  fail_if_success
-  sorry
+-- example (n : MyNat) : 0 + n = n := by
+--   fail_if_success
+--   sorry
 
 #reduce fun (n : MyNat) => n + 0
 #reduce fun (n : MyNat) => 0 + n
